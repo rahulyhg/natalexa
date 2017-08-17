@@ -1,0 +1,355 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GetBirthChart",
+      "samples": [
+        "I was born in {city}  {state} ",
+        "I was born on {date}  {year} ",
+        "I was born at {time} ",
+        "Make my birth chart"
+      ],
+      "slots": [
+        {
+          "name": "city",
+          "type": "AMAZON.US_CITY",
+          "samples": [
+            "{city} {state}",
+            "{city}",
+            "I was born in {city} {state}",
+            "I was born in {city}",
+            "I was born in {city} in {state}"
+          ]
+        },
+        {
+          "name": "state",
+          "type": "AMAZON.US_STATE",
+          "samples": [
+            "{city}{state}",
+            "{state}",
+            "I was born in {state}",
+            "I was born in {city} {state}"
+          ]
+        },
+        {
+          "name": "sign",
+          "type": "SignType",
+          "samples": []
+        },
+        {
+          "name": "date",
+          "type": "AMAZON.DATE",
+          "samples": [
+            "{date}",
+            "{date} {year}",
+            "{date}{year} at {time}",
+            "{time} on {date}{year}",
+            "I was born on {date}",
+            "I was born on {date} {year}",
+            "I was born on {date} in {year}"
+          ]
+        },
+        {
+          "name": "year",
+          "type": "AMAZON.FOUR_DIGIT_NUMBER",
+          "samples": [
+            "{year}",
+            "{date} {year} at {time}",
+            "{time} on {date} {year}",
+            "I was born in {year}"
+          ]
+        },
+        {
+          "name": "time",
+          "type": "AMAZON.TIME",
+          "samples": [
+            "{time}",
+            "I was born at {time}",
+            "{time} in the morning",
+            "{time} in the afternoon",
+            "{time} at night",
+            "{time} on {date} {year}",
+            "{date} {year} at {time}"
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "SignType",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "Rising Sign",
+            "synonyms": [
+              "rising"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Sun Sign",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Mercury",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Venus",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Pluto",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Uranus",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Neptune",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Moon",
+            "synonyms": []
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetBirthChart.IntentSlot-city",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What city were you born in?"
+        },
+        {
+          "type": "PlainText",
+          "value": "Where were you born?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetBirthChart.IntentSlot-city",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "You were born in {city}, is that correct?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetBirthChart.IntentSlot-state",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Where were you born?"
+        },
+        {
+          "type": "PlainText",
+          "value": "What state were you born in?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetBirthChart.IntentSlot-state",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "You were born in {state}, is that correct?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetBirthChart.IntentSlot-date",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is your birth date?"
+        },
+        {
+          "type": "PlainText",
+          "value": "When were you born?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetBirthChart.IntentSlot-date",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "You were born on {date}, is that correct?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetBirthChart.IntentSlot-year",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What year were you born?"
+        },
+        {
+          "type": "PlainText",
+          "value": "When were you born?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetBirthChart.IntentSlot-year",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "You were born in {year}. Is that correct?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetBirthChart.IntentSlot-time",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What time were you born?"
+        },
+        {
+          "type": "PlainText",
+          "value": "When were you born?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetBirthChart.IntentSlot-time",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "You were born at {time}, is that correct?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "GetBirthChart",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "city",
+            "type": "AMAZON.US_CITY",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetBirthChart.IntentSlot-city",
+              "confirm": "Confirm.Intent-GetBirthChart.IntentSlot-city"
+            }
+          },
+          {
+            "name": "state",
+            "type": "AMAZON.US_STATE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetBirthChart.IntentSlot-state",
+              "confirm": "Confirm.Intent-GetBirthChart.IntentSlot-state"
+            }
+          },
+          {
+            "name": "sign",
+            "type": "SignType",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "date",
+            "type": "AMAZON.DATE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetBirthChart.IntentSlot-date",
+              "confirm": "Confirm.Intent-GetBirthChart.IntentSlot-date"
+            }
+          },
+          {
+            "name": "year",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetBirthChart.IntentSlot-year",
+              "confirm": "Confirm.Intent-GetBirthChart.IntentSlot-year"
+            }
+          },
+          {
+            "name": "time",
+            "type": "AMAZON.TIME",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetBirthChart.IntentSlot-time",
+              "confirm": "Confirm.Intent-GetBirthChart.IntentSlot-time"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
