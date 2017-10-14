@@ -4,6 +4,7 @@
 # Access birthcharts
 
 import urllib2
+import json
 from bs4 import BeautifulSoup, re
 
 
@@ -20,5 +21,5 @@ def getbirthchart(month, day, year, hour, minute, ampm, town, country, state= No
         chartlist.append((planet, sign))
     print chartlist
 
-getbirthchart(12, 24, 1996, 04, 20, 'PM', 'Washington', 'USA', 'DC')
-getbirthchart(07, 14, 1959, 07, 00, 'PM', 'Tokyo', 'Japan')
+#getbirthchart(12, 24, 1996, 04, 20, 'PM', 'Washington', 'USA', 'DC')
+#getbirthchart(07, 14, 1959, 07, 00, 'PM', 'Tokyo', 'Japan')
